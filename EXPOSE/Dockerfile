@@ -1,2 +1,2 @@
 FROM run:v1
-EXPOSE 80
+EXPOSE 80/tcp
