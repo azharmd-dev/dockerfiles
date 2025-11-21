@@ -4,4 +4,4 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY *.html *.js *.css /usr/share/nginx/html/
 RUN useradd azhar
 USER azhar
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["sleep", "1000"]
