@@ -1,7 +1,7 @@
 /* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* PAGE BG (uses uploaded image as subtle pattern) */
+/* PAGE BG (uses uploaded image as subtle pattern ) */
 .page-pattern {
   position: fixed;
   inset: 0;

@@ -1,7 +1,7 @@
 // script.js — robust timer + form behavior
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Timer: start from 12 hours (43,200 seconds)
+  // Timer: start from 12 hours (43,200 seconds )
   let totalSeconds = 12 * 60 * 60; // you can change this value if needed
 
   const timerEl = document.getElementById('timer');
