@@ -1,27 +1,51 @@
-const messages = [
-  "We’re working hard to launch this site.",
-  "This is a test page running inside the container.",
-  "Please check back again later."
-];
+// script.js — robust timer + form behavior
 
-let index = 0;
-const subtitleEl = document.getElementById("subtitle");
+document.addEventListener('DOMContentLoaded', () => {
+  // Timer: start from 12 hours (43,200 seconds)
+  let totalSeconds = 12 * 60 * 60; // you can change this value if needed
 
-function changeSubtitle() {
-  if (!subtitleEl) return;
+  const timerEl = document.getElementById('timer');
 
-  // Fade out
-  subtitleEl.style.opacity = 0;
+  // ensure element exists
+  if (!timerEl) return;
 
-  setTimeout(() => {
-    index = (index + 1) % messages.length;
-    subtitleEl.textContent = messages[index];
-    subtitleEl.style.opacity = 1;
-  }, 350);
-}
+  function formatTime(sec) {
+    const h = Math.floor(sec / 3600);
+    const m = Math.floor((sec % 3600) / 60);
+    const s = sec % 60;
+    return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }
 
-if (subtitleEl) {
-  subtitleEl.style.transition = "opacity 0.35s ease";
-}
+  // initial render
+  timerEl.textContent = formatTime(totalSeconds);
 
-setInterval(changeSubtitle, 3000);
+  const intervalId = setInterval(() => {
+    totalSeconds--;
+
+    if (totalSeconds < 0) {
+      timerEl.textContent = "00:00:00";
+      clearInterval(intervalId);
+      return;
+    }
+
+    timerEl.textContent = formatTime(totalSeconds);
+  }, 1000);
+
+  // form submit handling
+  const form = document.getElementById('notifyForm');
+  const emailInput = document.getElementById('email');
+
+  if (form && emailInput) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const value = emailInput.value.trim();
+      if (!value) {
+        emailInput.focus();
+        return;
+      }
+      // simple front-end confirmation; replace with real API call if needed
+      alert(`Thanks — we'll notify you at: ${value}`);
+      emailInput.value = '';
+    });
+  }
+});

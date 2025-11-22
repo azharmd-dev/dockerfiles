@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Construction</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coming Soon</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background"></div>
+  <!-- subtle pattern using your uploaded image (local path used) -->
+  <div class="page-pattern"></div>
 
-  <div class="container">
-    <h1 class="title">Under Construction</h1>
-
-    <p class="subtitle" id="subtitle">
-      We’re working hard to launch this site.
-    </p>
-
-    <div class="loader">
-      <div class="bar"></div>
-    </div>
-
-    <p class="small-text">
-      This page is for testing purposes inside the container.
-    </p>
-
-    <div class="contact">
-      <p>If you reached this by mistake, please try again later.</p>
-    </div>
+  <div class="shapes" aria-hidden="true">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+    <div class="shape s5"></div>
+    <div class="shape s6"></div>
   </div>
+
+  <main class="container" role="main">
+    <h1 class="title" aria-label="Coming soon">
+      <span>C</span><span>O</span><span>M</span><span>I</span><span>N</span><span>G</span><br />
+      <span>S</span><span>O</span><span>O</span><span>N</span>
+    </h1>
+
+    <p class="tagline">We are still working on it.</p>
+
+    <div id="timer" class="timer" aria-live="polite">12:00:00</div>
+
+    <form id="notifyForm" class="email-form" novalidate>
+      <input id="email" name="email" type="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <div class="social-media" aria-label="Social links">
+      <a href="#" aria-label="Facebook" class="social">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook" />
+      </a>
+      <a href="#" aria-label="Instagram" class="social">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
+      </a>
+      <a href="#" aria-label="YouTube" class="social">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+      </a>
+      <a href="#" aria-label="LinkedIn" class="social">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384072.png" alt="LinkedIn" />
+      </a>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
