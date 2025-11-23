@@ -1,4 +1,4 @@
-FROM amazonlinux:9
+FROM almalinux:9
 RUN mkdir /app
 WORKDIR /app
 RUN pwd
